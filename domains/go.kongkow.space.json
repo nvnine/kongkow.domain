@@ -1,0 +1,13 @@
+{
+  "$schema": "../schemas/domain.schema.json",
+  "description": "Dub.sh Custom Domain.",
+  "domain": "kongkow.space",
+  "subdomain": "go",
+  "owner": {
+    "repo": "https://github.com/KongkowITPekanbaru/kongkow-domains"
+  },
+  "record": {
+    "CNAME": "cname.dub.sh."
+  },
+  "proxy": false
+}
