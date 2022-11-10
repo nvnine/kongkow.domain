@@ -1,0 +1,56 @@
+---
+name: "🌀 Tests"
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    tags-ignore: ['**']
+    paths-ignore: ['**.md']
+  pull_request:
+    paths-ignore: ['**.md']
+
+concurrency:
+  group: ${{ github.ref }}-tests
+  cancel-in-progress: true
+
+jobs:
+  gitleaks:
+    name: GitLeaks
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: ✅ GitLeaks check
+        uses: gitleaks/gitleaks-action@v2
+
+  check:
+    name: DNSControl check
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+
+      - name: ✅ DNSControl check
+        uses: koenrh/dnscontrol-action@v3
+        with:
+          args: check
+
+  validate-schemas:
+    name: Validate schemas
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+
+      - name: ✅ Validate JSON
+        uses: walbo/validate-json@v1.1.0
+        with:
+          schema-version: draft-07
+          print-valid-files: true
+          fail-on-missing-schema: true
+          strict: false
+          files: ./domains/**/*.json

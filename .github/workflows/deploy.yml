@@ -1,0 +1,32 @@
+---
+name: "🚀 Deploy"
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: [domains/**, .github/workflows/deploy.yml]
+
+concurrency:
+  group: ${{ github.ref }}-deploy
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Deploy DNS changes
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+
+      - name: 🔑 Create credentials file
+        run: echo '{"cloudflare":{"TYPE":"CLOUDFLAREAPI","accountid":"$CF_ID","apitoken":"$CF_TOKEN"}}' > ./creds.json
+
+      - name: 🚀 DNSControl push
+        uses: koenrh/dnscontrol-action@v3
+        env:
+          CF_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        with:
+          args: push

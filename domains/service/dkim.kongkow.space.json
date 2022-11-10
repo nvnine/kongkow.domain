@@ -1,0 +1,14 @@
+{
+  "$schema": "../../schemas/domain.schema.json",
+  "description": "DKIM record",
+  "domain": "kongkow.space",
+  "subdomain": "*._domainkey",
+  "owner": {
+    "repo": "https://github.com/KongkowITPekanbaru/kongkow-domains"
+  },
+  "record": {
+    "TXT": [
+      "v=DKIM1; p="
+    ]
+  }
+}

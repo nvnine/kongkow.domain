@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/domain.schema.json",
+  "description": "Root domain",
+  "domain": "kongkow.space",
+  "subdomain": "@",
+  "owner": {
+    "repo": "https://github.com/KongkowITPekanbaru/kongkow-domains"
+  },
+  "record": {
+    "TXT": [
+      "v=spf1 -all"
+    ],
+    "A": [
+      "76.76.21.21"
+    ]
+  },
+  "proxy": false
+}
