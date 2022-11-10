@@ -8,7 +8,7 @@
 		"email": "hey@moojok.xyz"
 	},
   "record": {
-    "CNAME": "moojok.pages.dev."
+    "CNAME": "cname.vercel-dns.com."
   },
-  "proxy": true
+  "proxy": false
 }
