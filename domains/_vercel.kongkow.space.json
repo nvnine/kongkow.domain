@@ -1,0 +1,15 @@
+{
+  "$schema": "../schemas/domain.schema.json",
+  "description": "Vercel Verification",
+  "domain": "kongkow.space",
+  "subdomain": "_vercel",
+  "owner": {
+    "repo": "https://github.com"
+	},
+  "record": {
+    "TXT": [
+      "vc-domain-verify=go.kongkow.space,9a7190c5d8ed5c6947eb"
+    ]
+  },
+  "proxy": false
+}
