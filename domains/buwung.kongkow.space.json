@@ -1,0 +1,14 @@
+{
+  "$schema": "../schemas/domain.schema.json",
+  "description": "Generate a bird avatar to use as a profile picture or whatever else you like 🙂",
+  "domain": "kongkow.space",
+  "subdomain": "buwung",
+  "owner": {
+    "repo": "https://github.com/moojok",
+		"email": "hey@moojok.xyz"
+	},
+  "record": {
+    "CNAME": "buwung.netlify.app."
+  },
+  "proxy": false
+}
