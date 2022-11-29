@@ -6,6 +6,7 @@
 /creds.json
 
 ## Temp dirs & trash
+/backup
 /temp
 /tmp
 .DS_Store
