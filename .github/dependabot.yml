@@ -6,6 +6,6 @@ updates:
     schedule: {
       interval: weekly
     }
-    reviewers: [
-      @nvnine/owners
-    ]
+    reviewers:
+    - "moojok"
+    - "@nvnine/owners"
