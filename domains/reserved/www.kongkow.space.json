@@ -1,13 +1,18 @@
 {
-  "$schema": "../schemas/domain.schema.json",
-  "description": "Root domain",
+  "$schema": "../../schemas/domain.schema.json",
+
+  "description": "www Subdomain",
+
   "domain": "kongkow.space",
   "subdomain": "www",
+
   "owner": {
-    "repo": "https://github.com/KongkowITPekanbaru/kongkow-domains"
+    "repo": "https://github.com/nvnine/kongkow.space"
   },
+
   "record": {
     "CNAME": "cname.vercel-dns.com."
   },
+
   "proxy": false
 }

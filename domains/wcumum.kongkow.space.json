@@ -1,13 +1,18 @@
 {
   "$schema": "../schemas/domain.schema.json",
+
   "description": "Toilet umum yang boleh diakses oleh publik tanpa harus menjadi pelanggan.",
+
   "domain": "kongkow.space",
   "subdomain": "wcumum",
+
   "owner": {
 		"email": "hey@moojok.xyz"
 	},
+
   "record": {
     "CNAME": "cname.vercel-dns.com."
   },
+
   "proxy": false
 }

@@ -8,8 +8,7 @@
       "description": "Path to the schema file"
     },
     "description": {
-      "type": "string",
-      "minLength": 4
+      "type": "string"
     },
     "domain": {
       "type": "string",
@@ -19,10 +18,9 @@
     },
     "subdomain": {
       "type": "string",
-      "pattern": "^([a-z0-9_*.-]{2,64}|@)$",
+      "pattern": "^([a-z0-9_*.-]{1,}|@)$",
       "not": {
         "enum": [
-          "*",
           "a11y",
           "about",
           "account",
@@ -107,6 +105,7 @@
           "email",
           "emails",
           "es2015",
+          "example",
           "faq",
           "faqs",
           "feed",
@@ -199,7 +198,6 @@
           "raw",
           "readme",
           "regex",
-          "register",
           "registration",
           "remote",
           "rest",
@@ -243,7 +241,6 @@
           "teams",
           "tech",
           "terminal",
-          "test",
           "this",
           "that",
           "tip",
@@ -260,7 +257,6 @@
           "trusted",
           "tutorial",
           "tutorials",
-          "tweak",
           "tweaks",
           "type",
           "types",
@@ -306,7 +302,7 @@
       "properties": {
         "repo": {
           "type": "string",
-          "description": "Path to the github repository"
+          "description": "GitHub repository"
         },
         "email": {
           "type": "string",
@@ -318,14 +314,6 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "TXT": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 255
-          }
-        },
         "A": {
           "type": "array",
           "items": {
@@ -345,20 +333,29 @@
           "minLength": 1,
           "pattern": "^[a-z0-9_./-]*\\.$"
         },
+        "MX": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "NS": {
           "type": "array",
           "items": {
             "type": "string",
             "pattern": "^[a-z0-9._-]{3,}$"
           }
+        },
+        "TXT": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          }
         }
       },
       "anyOf": [
-        {
-          "required": [
-            "TXT"
-          ]
-        },
         {
           "required": [
             "A"
@@ -377,6 +374,11 @@
         {
           "required": [
             "NS"
+          ]
+        },
+        {
+          "required": [
+            "TXT"
           ]
         }
       ]
