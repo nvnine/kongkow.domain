@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/domain.schema.json",
+
+  "description": "Minimal, fast and privacy focused website analytics.",
+
+  "domain": "kongkow.space",
+  "subdomain": "momo",
+
+  "owner": {
+		"email": "hey@moojok.xyz"
+	},
+
+  "record": {
+    "CNAME": "cname.vercel-dns.com."
+  },
+
+  "proxy": false
+}
