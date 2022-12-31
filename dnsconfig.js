@@ -6,6 +6,9 @@ var proxy = { // https://stackexchange.github.io/dnscontrol/providers/cloudflare
   off: { "cloudflare_proxy": "off" }
 }
 
+// Record ignore
+var dnslink = IGNORE_NAME("_dnslink")
+
 /**
  * Note: glob() is only an internal undocumented helper function (maybe risky).
  *
@@ -104,5 +107,5 @@ for (var idx in domains) {
 }
 
 for (var domainName in commit) {
-  D(domainName, regNone, providerCf, commit[domainName]);
+  D(domainName, regNone, providerCf, commit[domainName], dnslink);
 }
